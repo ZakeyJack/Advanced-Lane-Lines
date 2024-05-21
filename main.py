@@ -54,7 +54,7 @@ class FindLaneLines:
     def process_video(self, input_path, output_path):
         clip = VideoFileClip(input_path)
         out_clip = clip.fl_image(self.forward)
-        out_clip.write_videofile(output_path, audio=False)
+        out_clip.write_videofile(output_path, audio=False, codec='libx264')
 
 def main():
     args = docopt(__doc__)
